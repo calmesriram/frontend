@@ -1,0 +1,105 @@
+<html>
+<head>
+ this is head
+<title>
+this is title
+</title>
+</head>
+<body>
+<center>
+</br></br>
+<input type="text" id="txt1" placeholder="input">
+</br></br>
+<input type="text" id="txt2" placeholder="input">
+</br></br>
+<table id ="table" border="1">
+<tr>
+   <th>names</th>
+
+</tr>
+</table>
+<span id="val"></span>
+
+
+
+
+</br></br>
+<input type="button" value="press" onclick="prt()">
+</center>
+
+</body>
+<script>
+     web3.eth.defaultAccount = web3.eth.accounts[0];
+	var con = web3.eth.contract([
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "a",
+				"type": "address"
+			},
+			{
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "input",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "a",
+				"type": "address"
+			}
+		],
+		"name": "output",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]);
+ var addcon = con.at('0x9c409abbfbf6a9a121767c924c189c48a70e82ce');
+
+
+function prt()
+{
+ 
+    return addcon.output(function(error,result)
+     {
+	        if(!error)
+		{
+                   for(var i=0;i<2;i++)
+                   {
+                         document.getElementById('txt1').value = result[0];
+                          alert(result[0]);
+                         document.getElementById('txt2').value = result[1];
+                          alert(result[1]);
+                  }
+                }
+      
+	
+      });
+
+
+}
+</script>
+</html>

@@ -1,0 +1,52 @@
+  //alert(i);
+    // document.getElementIdBy('get').value = i;
+   // alert(options[i].value);
+//o = document.getElementById("somebox");
+  //    for(i = o.length-1;i>=0;i--){
+    //        if(o.options[i].selected){
+      //            alert(o.options[i].value);
+        //    }    // }
+
+
+
+
+var i;
+var  ansIsName;
+ for(i=2;i<10;i++)
+{
+//  table.rows[i].cells[0].innerHTML = i;
+ ansIsName = i;
+        
+}
+
+
+//for(var a=1;a<ansIsName.rows.lenght;a++)
+//{
+  //    var he = ansIsName.rows[i].cells[2].innerHTML;
+//}
+
+
+pragma solidity ^0.4.0;
+contract dis{
+
+struct det{
+    uint256 id;
+    string name;
+}
+mapping(address => det)map;
+
+function input(address a,uint256 id,string name)public 
+{
+    map[a].id = id;
+    map[a].name = name;
+}
+function output(address a) public constant returns(uint256,string)
+{
+    return(map[a].id,map[a].name);
+    
+}
+
+
+
+
+}

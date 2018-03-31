@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body onload="myFunction();">
+<div class="container"></br></br>
+<table id ="ta"class="table table-hover">
+
+<tr id="op">
+<td></td>
+</tr>
+</table>
+</div>
+<p>Click the button to loop from 1 to 6, to make HTML headings.</p>
+//<button onclick="myFunction()">Try it</button>
+
+
+<script>
+function myFunction() {
+	 
+   
+    var x = "<thead><tbody><tr><th> NAME</th> <th> ADDRESS</th> <th>INTEREST</th></tr><tbody></thead>";
+    var i,j;
+   
+    for(j=0;j<=10;j++)
+    {
+    x = x+ "<tr><td>"+ j+"</td> <td>" +j+"</td> <td>"+j+"</td></tr>"
+    }
+    
+    
+     
+    document.getElementById("ta").innerHTML = x;
+  }
+</script>
+
+</body>
+</html>
